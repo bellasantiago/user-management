@@ -1,12 +1,12 @@
 import React from 'react'
-import API from "../utils/API";
-import Results from "";
+// import API from "../utils/API";
+// import Results from "";
 
 function Table(props) {
     console.log(props)
     return (
         <div>
-            <table class="table table-dark">
+            <table className="table table-dark">
                 <thead>
                     <tr>
                         <th scope="col">Picture</th>
@@ -22,18 +22,6 @@ function Table(props) {
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
                     </tr>
                 </tbody>
             </table>
