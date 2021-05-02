@@ -1,15 +1,19 @@
 import React from 'react'
+import API from "../utils/API";
+import Results from "";
 
-function Table() {
+function Table(props) {
+    console.log(props)
     return (
         <div>
             <table class="table table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Picture</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
                     </tr>
                 </thead>
                 <tbody>
