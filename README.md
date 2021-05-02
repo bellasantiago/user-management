@@ -4,7 +4,7 @@
   ---
 
   ## Description📒
-  A applicaiton that enables the user to view a user directory and have access to their information.
+  A application that enables the user to view a user directory and have access to their information.
 
   ---
 
