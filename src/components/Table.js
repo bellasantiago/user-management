@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import API from "../utils/API";
-// import Results from "";
+import Results from "../components/Results";
 
 
 class Table extends Component {
@@ -22,28 +22,21 @@ class Table extends Component {
             .catch(err => console.log(err));
     }
     
-
+    
     render() {
         return (
             <div>
                 <table className="table table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">Picture</th>
+                            <th scope="col">Employee</th>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                    </tbody>
+                    <Results results={this.state.employees} />
                 </table>
             </div>
         )
