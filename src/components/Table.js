@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import API from "../utils/API";
 import Results from "../components/Results";
+import Search from "../components/Search";
 
 
 class Table extends Component {
@@ -26,6 +27,8 @@ class Table extends Component {
     render() {
         return (
             <div>
+                <Search employees={this.state.employees}/>
+                <br></br>
                 <table className="table table-dark">
                     <thead>
                         <tr>
