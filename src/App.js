@@ -25,8 +25,7 @@ class App extends Component {
     API.randomEmployee()
       .then(res => {
         this.setState({ 
-          employees: res.data.results,
-          results: res.data.results
+          employees: res.data.results
         });
         console.log(res)
       })
@@ -47,7 +46,8 @@ class App extends Component {
         results={this.state.results} 
         employees={this.state.employees}
         />
-        <Table results={this.state.results}/>
+        <Table results={this.state.results}
+        employees={this.state.employees}/>
       </div>
     );
   }
