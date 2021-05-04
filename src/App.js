@@ -9,7 +9,8 @@ import Search from "./components/Search";
 class App extends Component {
 
   state = {
-    employees: []
+    employees: [],
+    results: [],
   };
 
   componentDidMount() {
@@ -28,16 +29,20 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  handleInputChange() {
-    
-  }
+  handleInputChange = (event) => {
+    this.setState({ results: event.target.value});
+  };
 
   render() {
     return (
       <div className="App">
         <Navbar />
         <Hero />
-        <Search handleInputChange={this.handleInputChange} />
+        <Search 
+        handleInputChange={this.handleInputChange}
+        results={this.state.results} 
+        employees={this.state.employees}
+        />
         <Table results={this.state.results}/>
       </div>
     );

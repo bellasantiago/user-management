@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Search(props) {
-    
+
     const handleFormSubmit = e => {
         e.preventDefault()
     }
