@@ -2,6 +2,13 @@ import React from "react";
 
 
 function Table(props) {
+    const filterFunction = (employee) => {
+        if (props.results === "") return true;
+        
+        if (props.results === employee.name.first) return true;
+
+    }
+
     return (
         <div>
 
@@ -17,7 +24,7 @@ function Table(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.results.map((employee) => {
+                    {props.results.filter(filterFunction).map((employee) => {
                         return (
                             <tr key={employee.login.username}>
                                 <td><img src={employee.picture.thumbnail} alt=""></img></td>

@@ -10,7 +10,7 @@ class App extends Component {
 
   state = {
     employees: [],
-    results: [],
+    results: "",
     sort: false
   };
 
