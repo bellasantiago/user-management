@@ -4,7 +4,7 @@ import React from "react";
 function Table(props) {
     const filterFunction = (employee) => {
         if (props.results === "") return true;
-        if (props.results === employee.name.first) return true;
+        if (employee.name.first.includes(props.results)) return true;
     }
 
     return (
