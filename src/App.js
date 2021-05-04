@@ -11,8 +11,12 @@ class App extends Component {
   state = {
     employees: [],
     results: [],
+    sort: false
   };
 
+  sort() {
+    this.setState({ sort: !this.state.sort })
+  }
   componentDidMount() {
     this.getEmployeeResults();
   }

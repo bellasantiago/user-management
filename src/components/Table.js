@@ -6,12 +6,12 @@ function Table(props) {
         <div>
 
             <br></br>
-            <table className="table table-dark">
+            <table className="table table-dark table-sortable">
                 <thead>
                     <tr>
                         <th scope="col">Employee</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
+                        <th scope="col" onClick={() => { props.results.sort() }} >First Name</th>
+                        <th scope="col">Last name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                     </tr>
