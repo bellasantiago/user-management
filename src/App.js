@@ -6,12 +6,18 @@ import React, { Component } from "react"
 import API from "./utils/API";
 import Search from "./components/Search";
 
+
 class App extends Component {
+  constructor() {
+    super();
+    this.orderUsers = this.orderUsers.bind(this);
+  }
+  
 
   state = {
     employees: [],
     results: "",
-    sorted: false
+    sorted: true
   };
 
   orderUsers() {
@@ -38,9 +44,6 @@ class App extends Component {
       sorted: !this.state.order,
     });
   }
-  // onSortChange() {
-  //   this.setState({ sorted: !this.state.sorted })
-  // };
 
   componentDidMount() {
     this.getEmployeeResults();
@@ -75,6 +78,7 @@ class App extends Component {
           results={this.state.results}
           employees={this.state.employees}
           sorted={this.state.sorted}
+          orderUsers={this.orderUsers}
         />
       </div>
     );
