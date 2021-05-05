@@ -15,7 +15,7 @@ function Table(props) {
                 <thead>
                     <tr>
                         <th scope="col">Employee</th>
-                        <th scope="col" onClick={() => { props.results.sort() }} >First Name</th>
+                        <th scope="col" onClick={() => { props.orderUsers() }} >First Name</th>
                         <th scope="col">Last name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>

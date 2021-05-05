@@ -11,29 +11,54 @@ class App extends Component {
   state = {
     employees: [],
     results: "",
-    sort: false
+    sorted: false
   };
 
-  sort() {
-    this.setState({ sort: !this.state.sort })
+  orderUsers() {
+    if (this.state.sorted) {
+      return this.state.employees.sort((a, b) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+      });
+    }
+  
+    return this.state.employees.reverse((a, b) => {
+      if (a.name < b.name) return 1;
+      if (a.name > b.name) return -1;
+      return 0;
+    });
   }
+  
+  onSortChange = () => {
+    const orderedUsers = this.orderUsers();
+  
+    this.setState({
+      employees: orderedUsers,
+      sorted: !this.state.order,
+    });
+  }
+  // onSortChange() {
+  //   this.setState({ sorted: !this.state.sorted })
+  // };
+
   componentDidMount() {
     this.getEmployeeResults();
-  }
+  };
 
   getEmployeeResults() {
     API.randomEmployee()
       .then(res => {
-        this.setState({ 
+        this.setState({
           employees: res.data.results
         });
         console.log(res)
       })
       .catch(err => console.log(err));
-  }
+  };
 
   handleInputChange = (event) => {
-    this.setState({ results: event.target.value});
+    this.setState({ results: event.target.value });
   };
 
   render() {
@@ -41,13 +66,16 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Hero />
-        <Search 
-        handleInputChange={this.handleInputChange}
-        results={this.state.results} 
-        employees={this.state.employees}
+        <Search
+          handleInputChange={this.handleInputChange}
+          results={this.state.results}
+          employees={this.state.employees}
         />
-        <Table results={this.state.results}
-        employees={this.state.employees}/>
+        <Table
+          results={this.state.results}
+          employees={this.state.employees}
+          sorted={this.state.sorted}
+        />
       </div>
     );
   }
