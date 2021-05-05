@@ -59,7 +59,7 @@ node start
 
   If you have any questions, please contact me at bellasantiago.adl@gmail.com
 
-  Have a look at my other projects at [GitHub](http://github.com/bellasantiago).
+  Have a look at my other projects at [GitHub](https://bellasantiago.github.io/user-management/).
 
   ---
   ## License🔐
